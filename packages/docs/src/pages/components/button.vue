@@ -71,6 +71,7 @@ import { Button } from '@vue-ds/components';
         <div class="flex flex-wrap gap-4">
           <Button>Default</Button>
           <Button disabled>Disabled</Button>
+          <Button loading>Loading</Button>
         </div>
       </div>
     </section>
