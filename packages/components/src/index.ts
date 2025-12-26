@@ -198,3 +198,15 @@ export type { ResponsiveProps } from './Responsive.vue';
 export type { PortalProps } from './Portal.vue';
 export type { TransitionProps } from './Transition.vue';
 export type { FormProps } from './Form.vue';
+
+// Agentic Components
+export { default as ChatLayout } from './components/agentic/ChatLayout.vue';
+export { default as ConversationList, type Conversation } from './components/agentic/ConversationList.vue';
+export { default as ChatMessage } from './components/agentic/ChatMessage.vue';
+export { default as MessageComposer } from './components/agentic/MessageComposer.vue';
+export { default as AgentCard } from './components/agentic/AgentCard.vue';
+export { default as ToolCallLog, type ToolCall } from './components/agentic/ToolCallLog.vue';
+export { default as RunStatusIndicator } from './components/agentic/RunStatusIndicator.vue';
+export { default as ApprovalGate } from './components/agentic/ApprovalGate.vue';
+export { default as MemoryChips } from './components/agentic/MemoryChips.vue';
+export { default as AgentConsolePanel } from './components/agentic/AgentConsolePanel.vue';

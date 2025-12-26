@@ -12,6 +12,17 @@
       "require": "./src/index.ts",
       "types": "./src/index.ts"
     },
+    "./lib/cn": "./src/lib/cn.ts",
+    "./agentic/ChatLayout.vue": "./src/components/agentic/ChatLayout.vue",
+    "./agentic/ConversationList.vue": "./src/components/agentic/ConversationList.vue",
+    "./agentic/ChatMessage.vue": "./src/components/agentic/ChatMessage.vue",
+    "./agentic/MessageComposer.vue": "./src/components/agentic/MessageComposer.vue",
+    "./agentic/AgentCard.vue": "./src/components/agentic/AgentCard.vue",
+    "./agentic/ToolCallLog.vue": "./src/components/agentic/ToolCallLog.vue",
+    "./agentic/RunStatusIndicator.vue": "./src/components/agentic/RunStatusIndicator.vue",
+    "./agentic/ApprovalGate.vue": "./src/components/agentic/ApprovalGate.vue",
+    "./agentic/MemoryChips.vue": "./src/components/agentic/MemoryChips.vue",
+    "./agentic/AgentConsolePanel.vue": "./src/components/agentic/AgentConsolePanel.vue",
     "./Button.vue": "./src/Button.vue",
     "./Input.vue": "./src/Input.vue",
     "./Card.vue": "./src/Card.vue",
@@ -90,6 +101,10 @@
   ],
   "scripts": {
     "build": "vite build"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.2"
   },
   "peerDependencies": {
     "vue": "^3.4.0"
