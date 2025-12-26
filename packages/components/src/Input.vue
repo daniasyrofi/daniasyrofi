@@ -11,12 +11,15 @@ export interface InputProps {
   helperText?: string;
   id?: string;
   icon?: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
 }
 
 const props = withDefaults(defineProps<InputProps>(), {
   type: 'text',
   disabled: false,
   error: false,
+  size: 'md',
 });
 
 const emit = defineEmits<{
@@ -27,8 +30,14 @@ const hasError = computed(() => !!props.error);
 const errorMessage = computed(() => typeof props.error === 'string' ? props.error : '');
 
 const inputClasses = computed(() => {
+  const sizes = {
+    sm: 'px-3 py-2 text-sm',
+    md: 'px-4 py-3 text-base',
+    lg: 'px-5 py-4 text-lg',
+  };
+
   return [
-    'w-full px-4 py-3 rounded-lg border transition-all duration-200',
+    'w-full rounded-lg border transition-all duration-200',
     'bg-white dark:bg-neutral-900',
     'text-neutral-900 dark:text-neutral-100',
     'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
@@ -38,6 +47,8 @@ const inputClasses = computed(() => {
       : 'border-neutral-300 dark:border-neutral-700 focus:border-brand-primary focus:ring-brand-primary',
     'disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-neutral-50 dark:disabled:bg-neutral-800',
     props.icon ? 'pl-11' : '',
+    sizes[props.size],
+    props.class,
   ].join(' ');
 });
 
