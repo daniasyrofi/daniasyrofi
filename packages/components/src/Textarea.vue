@@ -11,6 +11,8 @@ export interface TextareaProps {
   id?: string;
   rows?: number;
   resize?: 'none' | 'vertical' | 'horizontal' | 'both';
+  maxLength?: number;
+  showCount?: boolean;
 }
 
 const props = withDefaults(defineProps<TextareaProps>(), {
@@ -18,6 +20,7 @@ const props = withDefaults(defineProps<TextareaProps>(), {
   error: false,
   rows: 4,
   resize: 'vertical',
+  showCount: false,
 });
 
 const emit = defineEmits<{
@@ -70,20 +73,31 @@ const handleInput = (event: Event) => {
       :placeholder="placeholder"
       :disabled="disabled"
       :rows="rows"
+      :maxlength="maxLength"
       :class="textareaClasses"
       @input="handleInput"
     />
-    <p
-      v-if="errorMessage"
-      class="mt-1.5 text-sm text-semantic-error"
-    >
-      {{ errorMessage }}
-    </p>
-    <p
-      v-else-if="helperText"
-      class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400"
-    >
-      {{ helperText }}
-    </p>
+    <div class="flex justify-between items-start mt-1.5">
+      <div class="flex-grow">
+        <p
+          v-if="errorMessage"
+          class="text-sm text-semantic-error"
+        >
+          {{ errorMessage }}
+        </p>
+        <p
+          v-else-if="helperText"
+          class="text-sm text-neutral-500 dark:text-neutral-400"
+        >
+          {{ helperText }}
+        </p>
+      </div>
+      <p
+        v-if="showCount"
+        class="text-xs text-neutral-400 dark:text-neutral-500"
+      >
+        {{ modelValue?.length || 0 }}{{ maxLength ? ` / ${maxLength}` : '' }}
+      </p>
+    </div>
   </div>
 </template>
