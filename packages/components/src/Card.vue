@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 export interface CardProps {
   padding?: 'none' | 'sm' | 'md' | 'lg';
-  variant?: 'default' | 'bordered' | 'elevated';
+  variant?: 'default' | 'elevated' | 'interactive' | 'glass';
 }
 
 const props = withDefaults(defineProps<CardProps>(), {
@@ -20,13 +20,15 @@ const cardClasses = computed(() => {
   };
 
   const variants = {
-    default: 'bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800',
-    bordered: 'bg-white dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-700',
-    elevated: 'bg-white dark:bg-neutral-900 shadow-lg dark:shadow-2xl',
+    default: 'bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-xs',
+    elevated: 'bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-lg',
+    interactive: 'bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200',
+    glass: 'bg-[rgba(255,255,255,0.75)] dark:bg-[rgba(3,7,18,0.6)] border border-[rgba(255,255,255,0.35)] dark:border-neutral-800 shadow-lg backdrop-blur',
   };
 
   return [
-    'rounded-lg',
+    'rounded-xl',
+    'transition-all duration-200',
     paddings[props.padding],
     variants[props.variant],
   ].join(' ');

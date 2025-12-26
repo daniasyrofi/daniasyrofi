@@ -10,41 +10,45 @@ const props = withDefaults(defineProps<AlertProps>(), {
   variant: 'info',
 });
 
-const alertClasses = computed(() => {
-  const variants = {
-    success: 'bg-semantic-success-light dark:bg-semantic-success-dark/20 border-semantic-success text-semantic-success-dark dark:text-semantic-success-light',
-    warning: 'bg-semantic-warning-light dark:bg-semantic-warning-dark/20 border-semantic-warning text-semantic-warning-dark dark:text-semantic-warning-light',
-    error: 'bg-semantic-error-light dark:bg-semantic-error-dark/20 border-semantic-error text-semantic-error-dark dark:text-semantic-error-light',
-    info: 'bg-semantic-info-light dark:bg-semantic-info-dark/20 border-semantic-info text-semantic-info-dark dark:text-semantic-info-light',
-  };
+const variants = {
+  success: {
+    root: 'bg-semantic-success-light text-semantic-success-dark border-semantic-success',
+    icon: 'ri-checkbox-circle-line',
+  },
+  warning: {
+    root: 'bg-semantic-warning-light text-semantic-warning-dark border-semantic-warning',
+    icon: 'ri-error-warning-line',
+  },
+  error: {
+    root: 'bg-semantic-error-light text-semantic-error-dark border-semantic-error',
+    icon: 'ri-close-circle-line',
+  },
+  info: {
+    root: 'bg-semantic-info-light text-semantic-info-dark border-semantic-info',
+    icon: 'ri-information-line',
+  },
+} as const;
 
+const alertClasses = computed(() => {
   return [
-    'rounded-lg border-l-4 p-4',
-    variants[props.variant],
+    'rounded-xl border p-5 shadow-xs',
+    'flex gap-3',
+    variants[props.variant].root,
   ].join(' ');
 });
-
-const icons = {
-  success: '✓',
-  warning: '⚠',
-  error: '✕',
-  info: 'ℹ',
-};
 </script>
 
 <template>
   <div :class="alertClasses" role="alert">
-    <div class="flex">
-      <div class="flex-shrink-0 text-lg mr-3">
-        {{ icons[variant] }}
-      </div>
-      <div class="flex-1">
-        <h3 v-if="title" class="font-semibold mb-1">
-          {{ title }}
-        </h3>
-        <div class="text-sm">
-          <slot />
-        </div>
+    <div class="mt-0.5 flex-shrink-0">
+      <i :class="variants[variant].icon" class="text-lg"></i>
+    </div>
+    <div class="min-w-0">
+      <h3 v-if="title" class="font-semibold text-sm mb-1">
+        {{ title }}
+      </h3>
+      <div class="text-sm leading-relaxed">
+        <slot />
       </div>
     </div>
   </div>

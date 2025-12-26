@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 
 export interface BadgeProps {
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info';
-  size?: 'sm' | 'md';
+  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const props = withDefaults(defineProps<BadgeProps>(), {
@@ -13,21 +13,24 @@ const props = withDefaults(defineProps<BadgeProps>(), {
 
 const badgeClasses = computed(() => {
   const variants = {
-    default: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100',
-    primary: 'bg-brand-primary-light dark:bg-brand-primary-dark text-brand-primary dark:text-brand-primary-light',
-    success: 'bg-semantic-success-light dark:bg-semantic-success-dark text-semantic-success-dark dark:text-semantic-success-light',
-    warning: 'bg-semantic-warning-light dark:bg-semantic-warning-dark text-semantic-warning-dark dark:text-semantic-warning-light',
-    error: 'bg-semantic-error-light dark:bg-semantic-error-dark text-semantic-error-dark dark:text-semantic-error-light',
-    info: 'bg-semantic-info-light dark:bg-semantic-info-dark text-semantic-info-dark dark:text-semantic-info-light',
+    default: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-200 dark:border-neutral-700',
+    primary: 'bg-brand-primary-light text-brand-primary border border-brand-primary',
+    success: 'bg-semantic-success-light text-semantic-success-dark border border-semantic-success',
+    warning: 'bg-semantic-warning-light text-semantic-warning-dark border border-semantic-warning',
+    error: 'bg-semantic-error-light text-semantic-error-dark border border-semantic-error',
+    info: 'bg-semantic-info-light text-semantic-info-dark border border-semantic-info',
+    outline: 'bg-transparent text-neutral-700 dark:text-neutral-300 border border-neutral-300 dark:border-neutral-600',
   };
 
   const sizes = {
-    sm: 'px-2 py-0.5 text-xs',
-    md: 'px-2.5 py-1 text-sm',
+    sm: 'px-2.5 py-1 text-xs',
+    md: 'px-3 py-1.5 text-sm',
+    lg: 'px-3.5 py-2 text-sm',
   };
 
   return [
-    'inline-flex items-center rounded-full font-medium',
+    'inline-flex items-center rounded-full font-medium leading-none',
+    'select-none whitespace-nowrap',
     variants[props.variant],
     sizes[props.size],
   ].join(' ');
