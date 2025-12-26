@@ -21,6 +21,11 @@ import AdvancedFormsPage from './pages/components/advanced-forms.vue';
 import DisplayPage from './pages/components/display.vue';
 import NavigationLayoutPage from './pages/components/navigation-layout.vue';
 
+import ChatDemoPage from './pages/agentic/chat.vue';
+import AgenticComponentsPage from './pages/agentic/components.vue';
+import ThemesPage from './pages/themes.vue';
+import AccessibilityPage from './pages/accessibility.vue';
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -40,6 +45,10 @@ const router = createRouter({
     { path: '/components/navigation-layout', component: NavigationLayoutPage },
     { path: '/components/modal', component: ModalPage },
     { path: '/components/tabs', component: TabsPage },
+    { path: '/agentic/chat', component: ChatDemoPage },
+    { path: '/agentic/components', component: AgenticComponentsPage },
+    { path: '/themes', component: ThemesPage },
+    { path: '/accessibility', component: AccessibilityPage },
   ],
 });
 

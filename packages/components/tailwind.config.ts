@@ -1,11 +1,10 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{vue,js,ts,jsx,tsx}',
-  ],
   darkMode: 'class',
+  content: [
+    './src/**/*.{vue,ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -35,66 +34,19 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
       },
-      fontFamily: {
-        heading: ['Inclusive Sans', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['Monaco', 'Courier New', 'monospace'],
-      },
-      fontSize: {
-        xs: ['12px', { lineHeight: '1.5' }],
-        sm: ['14px', { lineHeight: '1.5' }],
-        base: ['16px', { lineHeight: '1.5' }],
-        lg: ['18px', { lineHeight: '1.5' }],
-        xl: ['20px', { lineHeight: '1.5' }],
-        '2xl': ['24px', { lineHeight: '1.375' }],
-        '3xl': ['30px', { lineHeight: '1.25' }],
-        '4xl': ['36px', { lineHeight: '1.25' }],
-        '5xl': ['48px', { lineHeight: '1.25' }],
-        '6xl': ['56px', { lineHeight: '1.25' }],
-      },
-      spacing: {
-        0: '0px',
-        1: '4px',
-        2: '8px',
-        3: '12px',
-        4: '16px',
-        5: '20px',
-        6: '24px',
-        7: '28px',
-        8: '32px',
-        9: '36px',
-        10: '40px',
-        12: '48px',
-        14: '56px',
-        16: '64px',
-        20: '80px',
-        24: '96px',
-        32: '128px',
-      },
       borderRadius: {
         sm: 'var(--radius-sm)',
-        DEFAULT: 'var(--radius-md)',
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)',
         '2xl': 'var(--radius-2xl)',
-        '3xl': 'var(--radius-3xl)',
-        full: 'var(--radius-full)',
+        DEFAULT: 'var(--radius)',
       },
       boxShadow: {
-        xs: 'var(--shadow-xs)',
         sm: 'var(--shadow-sm)',
-        DEFAULT: 'var(--shadow-md)',
         md: 'var(--shadow-md)',
         lg: 'var(--shadow-lg)',
-        xl: 'var(--shadow-xl)',
-        '2xl': 'var(--shadow-2xl)',
-        inner: 'var(--shadow-inner)',
-      },
-      transitionDuration: {
-        fast: '150ms',
-        DEFAULT: '200ms',
-        slow: '300ms',
+        DEFAULT: 'var(--shadow-sm)',
       },
     },
   },

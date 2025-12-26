@@ -35,7 +35,7 @@ const getStepStatus = (index: number) => {
 </script>
 
 <template>
-  <div :class="['w-full', class]">
+  <div :class="['w-full', props.class]">
     <div class="flex items-start">
       <template v-for="(step, index) in steps" :key="index">
         <div 

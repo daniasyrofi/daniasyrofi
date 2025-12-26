@@ -97,6 +97,27 @@ const toggleTheme = () => {
                   </div>
                 </div>
               </div>
+              <div class="relative group">
+                <button class="inline-flex items-center px-1 pt-1 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100">
+                  Agentic UI
+                </button>
+                <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-neutral-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block z-10">
+                  <div class="py-1">
+                    <RouterLink to="/agentic/chat" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                      Chat Demo
+                    </RouterLink>
+                    <RouterLink to="/agentic/components" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                      Components
+                    </RouterLink>
+                  </div>
+                </div>
+              </div>
+              <RouterLink to="/themes" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100">
+                Themes
+              </RouterLink>
+              <RouterLink to="/accessibility" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100">
+                Accessibility
+              </RouterLink>
             </div>
           </div>
           <div class="flex items-center">

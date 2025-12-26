@@ -15,7 +15,9 @@
     "./colors.json": "./src/colors.json",
     "./typography.json": "./src/typography.json",
     "./spacing.json": "./src/spacing.json",
-    "./shadows.json": "./src/shadows.json"
+    "./shadows.json": "./src/shadows.json",
+    "./tokens.css": "./src/tokens.css",
+    "./globals.css": "./src/globals.css"
   },
   "files": [
     "dist",
