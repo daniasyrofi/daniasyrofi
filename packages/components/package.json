@@ -1,0 +1,38 @@
+{
+  "name": "@vue-ds/components",
+  "version": "1.0.0",
+  "description": "Vue 3 component library for Vue Design System",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./Button.vue": "./src/Button.vue",
+    "./Input.vue": "./src/Input.vue",
+    "./Card.vue": "./src/Card.vue",
+    "./Badge.vue": "./src/Badge.vue",
+    "./Alert.vue": "./src/Alert.vue",
+    "./Typography.vue": "./src/Typography.vue"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-dts": "^3.7.0",
+    "vue": "^3.4.15"
+  }
+}
