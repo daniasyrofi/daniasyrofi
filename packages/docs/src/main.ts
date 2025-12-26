@@ -17,6 +17,9 @@ import TypographyComponentPage from './pages/components/typography.vue';
 import FormElementsPage from './pages/components/form-elements.vue';
 import ModalPage from './pages/components/modal.vue';
 import TabsPage from './pages/components/tabs.vue';
+import AdvancedFormsPage from './pages/components/advanced-forms.vue';
+import DisplayPage from './pages/components/display.vue';
+import NavigationLayoutPage from './pages/components/navigation-layout.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -32,6 +35,9 @@ const router = createRouter({
     { path: '/components/alert', component: AlertPage },
     { path: '/components/typography', component: TypographyComponentPage },
     { path: '/components/form-elements', component: FormElementsPage },
+    { path: '/components/advanced-forms', component: AdvancedFormsPage },
+    { path: '/components/display', component: DisplayPage },
+    { path: '/components/navigation-layout', component: NavigationLayoutPage },
     { path: '/components/modal', component: ModalPage },
     { path: '/components/tabs', component: TabsPage },
   ],

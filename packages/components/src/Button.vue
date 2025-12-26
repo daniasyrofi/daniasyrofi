@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link' | 'success' | 'warning';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'icon';
   disabled?: boolean;
   loading?: boolean;
@@ -27,6 +27,8 @@ const buttonClasses = computed(() => {
     outline: 'bg-transparent border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-500 active:bg-neutral-100 dark:active:bg-neutral-700 text-neutral-900 dark:text-neutral-100',
     ghost: 'bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 active:bg-neutral-200 dark:active:bg-neutral-700 text-neutral-900 dark:text-neutral-100 border border-transparent',
     destructive: 'bg-semantic-error hover:bg-semantic-error-dark active:opacity-90 text-white shadow-sm border border-transparent',
+    success: 'bg-semantic-success hover:opacity-90 active:opacity-80 text-white shadow-sm border border-transparent',
+    warning: 'bg-semantic-warning hover:opacity-90 active:opacity-80 text-white shadow-sm border border-transparent',
     link: 'bg-transparent text-brand-primary underline-offset-4 hover:underline p-0 h-auto',
   };
 

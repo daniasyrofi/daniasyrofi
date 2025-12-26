@@ -12,6 +12,8 @@ export interface InputProps {
   id?: string;
   icon?: string;
   size?: 'sm' | 'md' | 'lg';
+  maxLength?: number;
+  showCount?: boolean;
   class?: string;
 }
 
@@ -20,6 +22,7 @@ const props = withDefaults(defineProps<InputProps>(), {
   disabled: false,
   error: false,
   size: 'md',
+  showCount: false,
 });
 
 const emit = defineEmits<{
@@ -80,21 +83,32 @@ const handleInput = (event: Event) => {
         :value="modelValue"
         :placeholder="placeholder"
         :disabled="disabled"
+        :maxlength="maxLength"
         :class="inputClasses"
         @input="handleInput"
       />
     </div>
-    <p
-      v-if="errorMessage"
-      class="mt-1.5 text-sm text-semantic-error"
-    >
-      {{ errorMessage }}
-    </p>
-    <p
-      v-else-if="helperText"
-      class="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400"
-    >
-      {{ helperText }}
-    </p>
+    <div class="flex justify-between items-start mt-1.5">
+      <div class="flex-grow">
+        <p
+          v-if="errorMessage"
+          class="text-sm text-semantic-error"
+        >
+          {{ errorMessage }}
+        </p>
+        <p
+          v-else-if="helperText"
+          class="text-sm text-neutral-500 dark:text-neutral-400"
+        >
+          {{ helperText }}
+        </p>
+      </div>
+      <p
+        v-if="showCount"
+        class="text-xs text-neutral-400 dark:text-neutral-500"
+      >
+        {{ String(modelValue || '').length }}{{ maxLength ? ` / ${maxLength}` : '' }}
+      </p>
+    </div>
   </div>
 </template>

@@ -79,6 +79,15 @@ const toggleTheme = () => {
                     <RouterLink to="/components/form-elements" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
                       Form Elements
                     </RouterLink>
+                    <RouterLink to="/components/advanced-forms" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                      Advanced Forms
+                    </RouterLink>
+                    <RouterLink to="/components/display" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                      Display
+                    </RouterLink>
+                    <RouterLink to="/components/navigation-layout" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                      Navigation & Layout
+                    </RouterLink>
                     <RouterLink to="/components/modal" class="block px-4 py-2 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700">
                       Modal
                     </RouterLink>
