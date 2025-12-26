@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { Badge } from '@vue-ds/components';
+import { ref } from 'vue';
+
+const showCode = ref(false);
+
+const code = `<script setup lang="ts">
+import { Badge } from '@vue-ds/components';
+<\/script>
+
+<template>
+  <Badge variant="success">Active</Badge>
+  <Badge variant="error">Error</Badge>
+  <Badge variant="warning" size="sm">Warning</Badge>
+</template>`;
 </script>
 
 <template>
@@ -15,6 +28,15 @@ import { Badge } from '@vue-ds/components';
       <h2 class="text-3xl font-semibold font-heading text-neutral-900 dark:text-neutral-100 mb-6">
         Variants
       </h2>
+      <button
+        @click="showCode = !showCode"
+        class="text-sm text-brand-primary hover:underline mb-4"
+      >
+        {{ showCode ? 'Hide' : 'Show' }} Code
+      </button>
+      <div v-if="showCode" class="bg-neutral-900 dark:bg-neutral-950 text-neutral-100 p-4 rounded-lg overflow-x-auto mb-4">
+        <pre class="text-sm"><code>{{ code }}</code></pre>
+      </div>
       <div class="p-8 bg-white dark:bg-neutral-950 rounded-lg border border-neutral-200 dark:border-neutral-800">
         <div class="flex flex-wrap gap-4">
           <Badge variant="default">Default</Badge>

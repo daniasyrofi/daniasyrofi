@@ -6,6 +6,25 @@ const value = ref('');
 const emailValue = ref('');
 const disabledValue = ref('Disabled input');
 const errorValue = ref('');
+
+const showCode = ref(false);
+
+const code = `<script setup lang="ts">
+import { ref } from 'vue';
+import { Input } from '@vue-ds/components';
+
+const email = ref('');
+<\/script>
+
+<template>
+  <Input
+    v-model="email"
+    label="Email"
+    type="email"
+    placeholder="you@example.com"
+    id="email"
+  />
+</template>`;
 </script>
 
 <template>
@@ -21,6 +40,15 @@ const errorValue = ref('');
       <h2 class="text-3xl font-semibold font-heading text-neutral-900 dark:text-neutral-100 mb-6">
         Basic
       </h2>
+      <button
+        @click="showCode = !showCode"
+        class="text-sm text-brand-primary hover:underline mb-4"
+      >
+        {{ showCode ? 'Hide' : 'Show' }} Code
+      </button>
+      <div v-if="showCode" class="bg-neutral-900 dark:bg-neutral-950 text-neutral-100 p-4 rounded-lg overflow-x-auto mb-4">
+        <pre class="text-sm"><code>{{ code }}</code></pre>
+      </div>
       <div class="p-8 bg-white dark:bg-neutral-950 rounded-lg border border-neutral-200 dark:border-neutral-800">
         <div class="max-w-md">
           <Input v-model="value" placeholder="Enter text..." />
