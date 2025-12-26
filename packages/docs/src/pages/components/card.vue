@@ -1,0 +1,106 @@
+<script setup lang="ts">
+import { Card } from '@vue-ds/components';
+</script>
+
+<template>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-5xl font-bold font-heading text-neutral-900 dark:text-neutral-100 mb-4">
+      Card
+    </h1>
+    <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-12">
+      A container component with customizable padding and variants.
+    </p>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-semibold font-heading text-neutral-900 dark:text-neutral-100 mb-6">
+        Variants
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card variant="default">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Default</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This is a default card with a subtle border.
+          </p>
+        </Card>
+        <Card variant="bordered">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Bordered</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This card has a more prominent border.
+          </p>
+        </Card>
+        <Card variant="elevated">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Elevated</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This card uses shadow for elevation.
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-semibold font-heading text-neutral-900 dark:text-neutral-100 mb-6">
+        Padding
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card padding="sm">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Small Padding</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This card has small padding (16px).
+          </p>
+        </Card>
+        <Card padding="md">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Medium Padding</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This card has medium padding (24px).
+          </p>
+        </Card>
+        <Card padding="lg">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Large Padding</h3>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            This card has large padding (32px).
+          </p>
+        </Card>
+        <Card padding="none">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">No Padding</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">
+              This card has no default padding. Padding is added manually inside.
+            </p>
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-semibold font-heading text-neutral-900 dark:text-neutral-100 mb-6">
+        Props
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-lg">
+          <thead>
+            <tr class="border-b border-neutral-200 dark:border-neutral-800">
+              <th class="px-4 py-3 text-left text-sm font-semibold text-neutral-900 dark:text-neutral-100">Prop</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold text-neutral-900 dark:text-neutral-100">Type</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold text-neutral-900 dark:text-neutral-100">Default</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold text-neutral-900 dark:text-neutral-100">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-neutral-200 dark:border-neutral-800">
+              <td class="px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 font-mono">padding</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400 font-mono">string</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400 font-mono">'md'</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400">Card padding size</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 font-mono">variant</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400 font-mono">string</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400 font-mono">'default'</td>
+              <td class="px-4 py-3 text-sm text-neutral-600 dark:text-neutral-400">Card style variant</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</template>

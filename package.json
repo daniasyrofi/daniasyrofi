@@ -1,0 +1,25 @@
+{
+  "name": "vue-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Vue 3 design system with monorepo structure",
+  "scripts": {
+    "dev": "pnpm --filter docs dev",
+    "build": "pnpm -r build",
+    "build:tokens": "pnpm --filter @vue-ds/tokens build",
+    "build:components": "pnpm --filter @vue-ds/components build",
+    "build:docs": "pnpm --filter docs build",
+    "preview": "pnpm --filter docs preview"
+  },
+  "keywords": [
+    "vue",
+    "design-system",
+    "components",
+    "ui"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
