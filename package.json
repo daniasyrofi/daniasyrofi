@@ -1,28 +1,41 @@
 {
-  "name": "vue-design-system",
+  "name": "agentic-design-system",
   "version": "1.0.0",
   "private": true,
-  "description": "A Vue 3 design system with monorepo structure",
+  "description": "Agentic Design System - Vue 3 Design System Documentation",
   "scripts": {
-    "dev": "pnpm --filter docs dev",
-    "build": "pnpm -r build",
-    "build:tokens": "pnpm --filter @vue-ds/tokens build",
-    "build:components": "pnpm --filter @vue-ds/components build",
-    "build:docs": "pnpm --filter docs build",
-    "preview": "pnpm --filter docs preview"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx",
+    "format": "prettier --write ."
   },
   "keywords": [
     "vue",
     "design-system",
-    "components",
-    "ui"
+    "documentation",
+    "ui",
+    "components"
   ],
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.0.0"
   },
-  "packageManager": "pnpm@8.15.0",
   "dependencies": {
-    "remixicon": "^4.6.0"
-  }
+    "@headlessui/vue": "^1.7.19",
+    "@vueuse/core": "^10.11.0",
+    "fuse.js": "^7.0.0",
+    "remixicon": "^4.6.0",
+    "shiki": "^1.10.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0",
+    "vite-plugin-vue-devtools": "^7.0.25"
+  },
+  "type": "module"
 }
