@@ -62,61 +62,53 @@ const iconStyle = computed(() => {
   font-size: 48px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .icon-primary {
-    color: var(--icon-primary, #E54D5C);
-  }
-  
-  .icon-secondary {
-    color: var(--icon-secondary, #8A8A8A);
-  }
-  
-  .icon-success {
-    color: var(--icon-success, #5DB77B);
-  }
-  
-  .icon-warning {
-    color: var(--icon-warning, #F5B945);
-  }
-  
-  .icon-error {
-    color: var(--icon-error, #E54D5C);
-  }
-  
-  .icon-info {
-    color: var(--icon-info, #5A9FD9);
-  }
-  
-  .icon-muted {
-    color: var(--icon-muted, #A0A0A0);
-  }
+:root {
+  --icon-primary: #D72539;
+  --icon-secondary: #5C5C5C;
+  --icon-success: #2D8636;
+  --icon-warning: #F5B945;
+  --icon-error: #D72539;
+  --icon-info: #2563EB;
+  --icon-muted: #8A8A8A;
 }
 
 .icon-primary {
-  color: var(--icon-primary, #D72539);
+  color: var(--icon-primary);
 }
 
 .icon-secondary {
-  color: var(--icon-secondary, #5C5C5C);
+  color: var(--icon-secondary);
 }
 
 .icon-success {
-  color: var(--icon-success, #2D8636);
+  color: var(--icon-success);
 }
 
 .icon-warning {
-  color: var(--icon-warning, #F5B945);
+  color: var(--icon-warning);
 }
 
 .icon-error {
-  color: var(--icon-error, #D72539);
+  color: var(--icon-error);
 }
 
 .icon-info {
-  color: var(--icon-info, #2563EB);
+  color: var(--icon-info);
 }
 
 .icon-muted {
-  color: var(--icon-muted, #8A8A8A);
+  color: var(--icon-muted);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icon-primary: #E54D5C;
+    --icon-secondary: #8A8A8A;
+    --icon-success: #5DB77B;
+    --icon-warning: #F5B945;
+    --icon-error: #E54D5C;
+    --icon-info: #5A9FD9;
+    --icon-muted: #A0A0A0;
+  }
 }
 </style>
