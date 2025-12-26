@@ -2,8 +2,9 @@
 import { computed } from 'vue';
 
 export interface AlertProps {
-  variant?: 'success' | 'warning' | 'error' | 'info';
+  variant?: 'success' | 'warning' | 'error' | 'info' | 'destructive' | 'default';
   title?: string;
+  class?: string;
 }
 
 const props = withDefaults(defineProps<AlertProps>(), {
@@ -27,6 +28,14 @@ const variants = {
     root: 'bg-semantic-info-light text-semantic-info-dark border-semantic-info',
     icon: 'ri-information-line',
   },
+  destructive: {
+    root: 'bg-destructive text-destructive-foreground border-destructive',
+    icon: 'ri-alert-line',
+  },
+  default: {
+    root: 'bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 border-neutral-200 dark:border-neutral-800',
+    icon: 'ri-notification-line',
+  },
 } as const;
 
 const alertClasses = computed(() => {
@@ -34,6 +43,7 @@ const alertClasses = computed(() => {
     'rounded-xl border p-5 shadow-xs',
     'flex gap-3',
     variants[props.variant].root,
+    props.class,
   ].join(' ');
 });
 </script>
